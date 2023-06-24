@@ -73,23 +73,11 @@ void HttpClientCLI::doHead(string cmd_argv[], int cmd_argc)
            cout << "Chua ket noi toi server." << endl;
            return;
     }
-    if(cmd_argc==2)
-    {
-        // add code here
-        string hostname;
-        cout << "Hostname: ";
-        cin >> hostname;
-        client.head(hostname, cmd_argv[1]);
-    }
     else if(cmd_argc == 1)
     {
         // add code here
-        string hostname, url;
-        cout << "Hostname: ";
-        cin >> hostname;
-        cout << "Url: ";
-        cin >> url;
-        client.head(hostname, url);
+        string hostname = client.localsocket.getHostname();
+        client.head(hostname);
     }
     else
     {
@@ -99,17 +87,13 @@ void HttpClientCLI::doHead(string cmd_argv[], int cmd_argc)
 
 void HttpClientCLI::doPost(string cmd_argv[], int cmd_argc)
 {
-    string resp, mssv;
+    string mssv;
     string hostname = client.localsocket.getHostname();
-    string url = client.localsocket.getAddressFromName(hostname);
-
-    if(!client.isConnected()) {
-           cout << "Chua ket noi toi server." << endl;
-           return;
-    }
     cout << "MSSV: ";
     cin >> mssv;
-    client.post(hostname, url, mssv);
+    client.post(hostname, mssv);
+    client.post(hostname, mssv);
+    client.post(hostname, mssv);
 }
 
 void HttpClientCLI::doHelp(string cmd_argv[], int cmd_argc)
@@ -117,6 +101,7 @@ void HttpClientCLI::doHelp(string cmd_argv[], int cmd_argc)
     cout << "Please use the following commands:" << endl;
     cout << "- open  hostname [port]   Mo ket noi den Http server" << endl;
     cout << "- head [url]              Gui yeu cau voi phuong thuc HEAD" << endl;
+    cout << "- post                    Gui yeu cau voi phuong thuc POST" << endl;
     cout << "- close                   Dong ket noi" << endl;
     cout << "- help                    Tro giup" << endl;
     cout << "- quit                    Ket thuc chuong trinh" << endl;

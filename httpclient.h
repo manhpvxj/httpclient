@@ -6,9 +6,10 @@
 class HttpClient: public TcpClient
 {
 private:
+    TcpClient tcp;
 public:
-    void head(const string& hostname, const string& url);
-    void post(const string& hostname, const string& url, const string& data);
+    void head(const string& hostname);
+    void post(const string& hostname, const string& data);
 };
 
 

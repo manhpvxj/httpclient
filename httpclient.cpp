@@ -1,15 +1,16 @@
 #include "httpclient.h"
 #include <iostream>
 
-void HttpClient::head(const string& hostname, const string& url)
+void HttpClient::head(const string& hostname)
 {
     // add code here
     string request;
 
-    request = "HEAD " + url + " HTTP/1.1\r\n";
+    request = "HEAD /api HTTP/1.1\r\n";
     request = request + "Host: " + hostname + "\r\n";
     request = request + "User-Agent: Simple HTTP Client version 1.0\r\n";
-    request = request + "Connection: close\r\n\r\n";
+    request = request + "Connection: keep-alive\r\n";
+    request = request + "Keep-Alive: timeout=60\r\n\r\n";
 
     int byte_sent = sendStringRequest(request);
     if(byte_sent > 0) {
@@ -26,15 +27,18 @@ void HttpClient::head(const string& hostname, const string& url)
     }
 }
 
-void HttpClient::post(const string& hostname, const string& url, const string& data)
+void HttpClient::post(const string& hostname, const string& data)
 {
     // add code here
+    print("status: " + tcp.isConnected());
     string request;
-    request = "POST " + url + "/" + data + " HTTP/1.1\r\n";
+    request = "POST /api/" + data + " HTTP/1.1\r\n";
     request = request + "Host: " + hostname + "\r\n";
-    request = request + "User-Agent: Simple HTTP Client version 1.0\r\n";
-    request = request + "Connection: close\r\n";
-    print(request);
+    request = request + "Access-Control-Allow-Origin: *\r\n";
+    request = request + "User-Agent: Simple HTTP Client version 2.0\r\n";
+    request = request + "Content-Type: application/json\r\n";
+    request = request + "Connection: keep-alive\r\n";
+    request = request + "Keep-Alive: 60\r\n\r\n";
     int byte_sent = sendStringRequest(request);
     if(byte_sent > 0) {
         char buffer[52];
@@ -48,6 +52,8 @@ void HttpClient::post(const string& hostname, const string& url, const string& d
         print(response);
     }
 }
+
+
 
 
 
