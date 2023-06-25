@@ -10,6 +10,7 @@ private:
 public:
     void head(const string& hostname);
     void post(const string& hostname, const string& data);
+    void putFile(const string& hostname, const string& fileName, FILE* file );
 };
 
 

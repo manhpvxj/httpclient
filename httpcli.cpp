@@ -20,6 +20,7 @@ void HttpClientCLI::initCmd()
     addCmd("head", CLI_CAST(HttpClientCLI::doHead));
     addCmd("close", CLI_CAST(HttpClientCLI::doClose));
     addCmd("post", CLI_CAST(HttpClientCLI::doPost));
+    addCmd("put", CLI_CAST(HttpClientCLI::doPut));
 
 }
 
@@ -92,8 +93,23 @@ void HttpClientCLI::doPost(string cmd_argv[], int cmd_argc)
     cout << "MSSV: ";
     cin >> mssv;
     client.post(hostname, mssv);
-    client.post(hostname, mssv);
-    client.post(hostname, mssv);
+}
+
+void HttpClientCLI::doPut(string cmd_argv[], int cmd_argc)
+{
+
+    string fileName;
+    string hostname = client.localsocket.getHostname();
+    cout<< "Nhap vao ten file: ";
+    cin >> fileName;
+    string fileDirectory = "C:\\Users\\User\\Desktop\\" + fileName;
+    FILE* file = fopen(fileDirectory.c_str(), "r");
+    if(file != NULL) {
+        client.putFile(hostname, fileDirectory, file);
+        fclose(file);
+    } else {
+        cout << "ERROR: Khong tim thay file" << endl;
+    }
 }
 
 void HttpClientCLI::doHelp(string cmd_argv[], int cmd_argc)
@@ -102,6 +118,7 @@ void HttpClientCLI::doHelp(string cmd_argv[], int cmd_argc)
     cout << "- open  hostname [port]   Mo ket noi den Http server" << endl;
     cout << "- head [url]              Gui yeu cau voi phuong thuc HEAD" << endl;
     cout << "- post                    Gui yeu cau voi phuong thuc POST" << endl;
+    cout << "- put                     Gui file voi phuong thuc PUT" << endl;
     cout << "- close                   Dong ket noi" << endl;
     cout << "- help                    Tro giup" << endl;
     cout << "- quit                    Ket thuc chuong trinh" << endl;
