@@ -52,17 +52,18 @@ void HttpClient::post(const string& hostname, const string& data)
     }
 }
 
-void HttpClient::putFile(const string& hostname, const string& fileName, FILE* file)
+void HttpClient::putFile(const string& hostname, const string& fileName, const string& fileContent)
 {
     string request;
     request = "PUT /api/file HTTP/1.1\r\n";
     request = request + "Host: " + hostname + "\r\n";
     request = request + "Access-Control-Allow-Origin: *\r\n";
-    request = request + "Content-Type: multipart/form-data; boundary=--myboundary\r\n\r\n";
-    request = request + "----myboundary\r\n";
-    request = request + "Content-Disposition: form-data; name=\"file\"; filename=\"/C:/Users/User/Desktop/test.txt\"\r\n";
+    request = request + "Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW\r\n\r\n";
+    request = request + "------WebKitFormBoundary7MA4YWxkTrZu0gW\r\n";
+    request = request + "Content-Disposition: form-data; name=\"file\"; filename=\"test.txt\"\r\n";
     request = request + "Content-Type: text/plain\r\n\r\n";
-    request = request + "-----myboundary--\r\n\r\n";
+    request = request + fileContent + "\r\n";
+    request = request + "------WebKitFormBoundary7MA4YWxkTrZu0gW--\r\n\r\n";
 
     print(request);
     int byte_sent = sendStringRequest(request);

@@ -1,6 +1,6 @@
 #include "httpcli.h"
 #include <iostream>
-
+#include <fstream>
 
 HttpClientCLI::HttpClientCLI():CmdLineInterface(">")
 {
@@ -98,15 +98,21 @@ void HttpClientCLI::doPost(string cmd_argv[], int cmd_argc)
 void HttpClientCLI::doPut(string cmd_argv[], int cmd_argc)
 {
 
-    string fileName;
+    string fileName, fileContent;
     string hostname = client.localsocket.getHostname();
     cout<< "Nhap vao ten file: ";
     cin >> fileName;
-    string fileDirectory = "C:\\Users\\User\\Desktop\\" + fileName;
-    FILE* file = fopen(fileDirectory.c_str(), "r");
-    if(file != NULL) {
-        client.putFile(hostname, fileDirectory, file);
-        fclose(file);
+    string fileDirectory = "C:\/Users\/User\/Desktop\/" + fileName;
+    cout << fileDirectory;
+    std::ifstream file(fileDirectory, ifstream::in);
+    if(file.is_open()) {
+        while(file) {
+            string line;
+            std::getline(file, line);
+        fileContent += line + " ";
+        };
+        client.putFile(hostname, fileDirectory, fileContent);
+        file.close();
     } else {
         cout << "ERROR: Khong tim thay file" << endl;
     }

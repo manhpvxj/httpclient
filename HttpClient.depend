@@ -146,7 +146,7 @@
 	<string>
 	<exception>
 
-1687681037 c:\users\user\desktop\exercise\laptrinhhethongmang\httpclient\httpclient.h
+1687782115 c:\users\user\desktop\exercise\laptrinhhethongmang\httpclient\httpclient.h
 	"tcpclient.h"
 
 1685890069 c:\users\user\desktop\exercise\laptrinhhethongmang\httpclient\tcpclient.h
@@ -184,11 +184,12 @@
 	<errno.h>
 	"tcpsocket.h"
 
-1687681762 source:c:\users\user\desktop\exercise\laptrinhhethongmang\httpclient\httpcli.cpp
+1687784604 source:c:\users\user\desktop\exercise\laptrinhhethongmang\httpclient\httpcli.cpp
 	"httpcli.h"
 	<iostream>
+	<fstream>
 
-1687681304 source:c:\users\user\desktop\exercise\laptrinhhethongmang\httpclient\httpclient.cpp
+1687784065 source:c:\users\user\desktop\exercise\laptrinhhethongmang\httpclient\httpclient.cpp
 	"httpclient.h"
 	<iostream>
 
