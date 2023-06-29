@@ -70,7 +70,7 @@ void HttpClientCLI::doHead(string cmd_argv[], int cmd_argc)
     {
         // add code here
         string hostname = client.localsocket.getHostname();
-        client.head(hostname);
+        client.head("localhost");
     }
     else
     {
@@ -99,10 +99,10 @@ void HttpClientCLI::doPut(string cmd_argv[], int cmd_argc)
         while(file) {
             string line;
             std::getline(file, line);
-        fileContent += line + " ";
+        fileContent += line + "\n";
         };
-        client.putFile(hostname, fileName, fileContent);
         file.close();
+        client.putFile(hostname, fileName, fileContent);
     } else {
         cout << "ERROR: Khong tim thay file" << endl;
     }

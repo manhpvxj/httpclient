@@ -40,7 +40,7 @@ void HttpClient::post(const string& hostname, const string& data)
     request = request + "Keep-Alive: 60\r\n\r\n";
     int byte_sent = sendStringRequest(request);
     if(byte_sent > 0) {
-        char buffer[62];
+        char buffer[50];
         int byte_recive = recvGetLine(buffer, sizeof(buffer));
         string response;
 
@@ -62,8 +62,7 @@ void HttpClient::putFile(const string& hostname, const string& fileName, const s
     request = request + "------WebKitFormBoundary7MA4YWxkTrZu0gW\r\n";
     request = request + "Content-Disposition: form-data; name=\"file\"; filename=\"" + fileName +"\"\r\n";
     request = request + "Content-Type: text/plain\r\n\r\n";
-    request = request + fileContent + "\r\n";
-    request = request + "------WebKitFormBoundary7MA4YWxkTrZu0gW--\r\n\r\n";
+    request = request + fileContent + "------WebKitFormBoundary7MA4YWxkTrZu0gW--\r\n\r\n";
 
     print(request);
     int byte_sent = sendStringRequest(request);

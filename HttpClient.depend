@@ -1,0 +1,195 @@
+# depslib dependency file v1.0
+1681390153 source:e:\exam\lthtm\http client\source-lab\cli.cpp
+	<iostream>
+	<sstream>
+	"cli.h"
+
+1647603059 e:\exam\lthtm\http client\source-lab\cli.h
+	<string>
+
+1639304354 source:e:\exam\lthtm\http client\source-lab\socket.cpp
+	"socket.h"
+	<winsock2.h>
+	<ws2tcpip.h>
+	<sys/types.h>
+	<sys/socket.h>
+	<netdb.h>
+	<arpa/inet.h>
+	<unistd.h>
+	<netinet/in.h>
+	<cstring>
+	<errno.h>
+
+1637042252 e:\exam\lthtm\http client\source-lab\socket.h
+	<string>
+	<exception>
+
+1681624073 source:e:\exam\lthtm\http client\source-lab\httpcli.cpp
+	"httpcli.h"
+	<iostream>
+
+1681623763 e:\exam\lthtm\http client\source-lab\httpcli.h
+	"cli.h"
+	"tcpsocket.h"
+	"httpclient.h"
+
+1639462546 e:\exam\lthtm\http client\source-lab\tcpsocket.h
+	"socket.h"
+
+1681624149 e:\exam\lthtm\http client\source-lab\httpclient.h
+	"tcpclient.h"
+
+1639549424 e:\exam\lthtm\http client\source-lab\tcpclient.h
+	"tcpsocket.h"
+	<fstream>
+
+1681624104 source:e:\exam\lthtm\http client\source-lab\httpclient.cpp
+	"httpclient.h"
+	<iostream>
+
+1639661342 source:e:\exam\lthtm\http client\source-lab\tcpclient.cpp
+	"tcpclient.h"
+	<iostream>
+	<fstream>
+
+1681390154 source:d:\lab2_ltmht\mycodefolder\cli.cpp
+	<iostream>
+	<sstream>
+	"cli.h"
+
+1647603060 d:\lab2_ltmht\mycodefolder\cli.h
+	<string>
+
+1681810908 source:d:\lab2_ltmht\mycodefolder\httpclient.cpp
+	"httpclient.h"
+	<iostream>
+
+1681810908 d:\lab2_ltmht\mycodefolder\httpclient.h
+	"tcpclient.h"
+
+1639549424 d:\lab2_ltmht\mycodefolder\tcpclient.h
+	"tcpsocket.h"
+	<fstream>
+
+1639462546 d:\lab2_ltmht\mycodefolder\tcpsocket.h
+	"socket.h"
+
+1637042252 d:\lab2_ltmht\mycodefolder\socket.h
+	<string>
+	<exception>
+
+1681624164 source:d:\lab2_ltmht\mycodefolder\main.cpp
+	<iostream>
+	"httpcli.h"
+
+1681810908 d:\lab2_ltmht\mycodefolder\httpcli.h
+	"cli.h"
+	"tcpsocket.h"
+	"httpclient.h"
+
+1639304354 source:d:\lab2_ltmht\mycodefolder\socket.cpp
+	"socket.h"
+	<winsock2.h>
+	<ws2tcpip.h>
+	<sys/types.h>
+	<sys/socket.h>
+	<netdb.h>
+	<arpa/inet.h>
+	<unistd.h>
+	<netinet/in.h>
+	<cstring>
+	<errno.h>
+
+1639661344 source:d:\lab2_ltmht\mycodefolder\tcpclient.cpp
+	"tcpclient.h"
+	<iostream>
+	<fstream>
+
+1639462688 source:d:\lab2_ltmht\mycodefolder\tcpsocket.cpp
+	<winsock2.h>
+	<ws2tcpip.h>
+	<sys/types.h>
+	<sys/socket.h>
+	<netdb.h>
+	<arpa/inet.h>
+	<unistd.h>
+	<netinet/in.h>
+	<cstring>
+	<errno.h>
+	"tcpsocket.h"
+
+1681810950 source:d:\lab2_ltmht\mycodefolder\httpcli.cpp
+	"httpcli.h"
+	<iostream>
+
+1681390154 source:c:\users\user\desktop\exercise\laptrinhhethongmang\httpclient\cli.cpp
+	<iostream>
+	<sstream>
+	"cli.h"
+
+1647603060 c:\users\user\desktop\exercise\laptrinhhethongmang\httpclient\cli.h
+	<string>
+
+1687971925 source:c:\users\user\desktop\exercise\laptrinhhethongmang\httpclient\main.cpp
+	<iostream>
+	"httpcli.h"
+
+1687676124 c:\users\user\desktop\exercise\laptrinhhethongmang\httpclient\httpcli.h
+	"cli.h"
+	"tcpsocket.h"
+	"httpclient.h"
+
+1639462546 c:\users\user\desktop\exercise\laptrinhhethongmang\httpclient\tcpsocket.h
+	"socket.h"
+
+1637042252 c:\users\user\desktop\exercise\laptrinhhethongmang\httpclient\socket.h
+	<string>
+	<exception>
+
+1687782115 c:\users\user\desktop\exercise\laptrinhhethongmang\httpclient\httpclient.h
+	"tcpclient.h"
+
+1685890069 c:\users\user\desktop\exercise\laptrinhhethongmang\httpclient\tcpclient.h
+	"tcpsocket.h"
+	<fstream>
+
+1639304354 source:c:\users\user\desktop\exercise\laptrinhhethongmang\httpclient\socket.cpp
+	"socket.h"
+	<winsock2.h>
+	<ws2tcpip.h>
+	<sys/types.h>
+	<sys/socket.h>
+	<netdb.h>
+	<arpa/inet.h>
+	<unistd.h>
+	<netinet/in.h>
+	<cstring>
+	<errno.h>
+
+1639661344 source:c:\users\user\desktop\exercise\laptrinhhethongmang\httpclient\tcpclient.cpp
+	"tcpclient.h"
+	<iostream>
+	<fstream>
+
+1639462688 source:c:\users\user\desktop\exercise\laptrinhhethongmang\httpclient\tcpsocket.cpp
+	<winsock2.h>
+	<ws2tcpip.h>
+	<sys/types.h>
+	<sys/socket.h>
+	<netdb.h>
+	<arpa/inet.h>
+	<unistd.h>
+	<netinet/in.h>
+	<cstring>
+	<errno.h>
+	"tcpsocket.h"
+
+1688023913 source:c:\users\user\desktop\exercise\laptrinhhethongmang\httpclient\httpcli.cpp
+	"httpcli.h"
+	<iostream>
+	<fstream>
+
+1688023457 source:c:\users\user\desktop\exercise\laptrinhhethongmang\httpclient\httpclient.cpp
+	"httpclient.h"
+	<iostream>
+
