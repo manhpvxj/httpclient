@@ -60,7 +60,7 @@ void HttpClient::putFile(const string& hostname, const string& fileName, const s
     request = request + "Access-Control-Allow-Origin: *\r\n";
     request = request + "Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW\r\n\r\n";
     request = request + "------WebKitFormBoundary7MA4YWxkTrZu0gW\r\n";
-    request = request + "Content-Disposition: form-data; name=\"file\"; filename=\"test.txt\"\r\n";
+    request = request + "Content-Disposition: form-data; name=\"file\"; filename=\"" + fileName +"\"\r\n";
     request = request + "Content-Type: text/plain\r\n\r\n";
     request = request + fileContent + "\r\n";
     request = request + "------WebKitFormBoundary7MA4YWxkTrZu0gW--\r\n\r\n";

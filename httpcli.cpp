@@ -36,17 +36,9 @@ void HttpClientCLI::doOpen(string cmd_argv[], int cmd_argc)
          bool ok = client.open(cmd_argv[1], cmd_argv[2]);
          if (ok) {
             cout <<  "Ket noi thanh cong." << endl;
+         } else {
+            cout << "Ket noi that bai." << endl;
          }
-
-    }
-    else if(cmd_argc==2)
-    {
-         // add code
-         bool ok =  client.open(cmd_argv[1], "http");
-         if (ok) {
-            cout << "Ket noi thanh cong." << endl;
-         }
-
     }
     else
     {
@@ -100,18 +92,16 @@ void HttpClientCLI::doPut(string cmd_argv[], int cmd_argc)
 
     string fileName, fileContent;
     string hostname = client.localsocket.getHostname();
-    cout<< "Nhap vao ten file: ";
+    cout<< "Nhap vao duong dan toi file: ";
     cin >> fileName;
-    string fileDirectory = "C:\/Users\/User\/Desktop\/" + fileName;
-    cout << fileDirectory;
-    std::ifstream file(fileDirectory, ifstream::in);
+    std::ifstream file(fileName, ifstream::in);
     if(file.is_open()) {
         while(file) {
             string line;
             std::getline(file, line);
         fileContent += line + " ";
         };
-        client.putFile(hostname, fileDirectory, fileContent);
+        client.putFile(hostname, fileName, fileContent);
         file.close();
     } else {
         cout << "ERROR: Khong tim thay file" << endl;
